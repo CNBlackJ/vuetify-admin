@@ -6,23 +6,29 @@ Vue.use(Router)
 const routes = [
   {
     path: '/',
-    name: 'index',
-    component: () => import('@/pages/Index')
-  },
-  {
-    path: '/dashboard',
-    name: 'dashboard',
-    component: () => import('@/pages/Dashboard')
-  },
-  {
-    path: '/product',
-    name: 'product',
-    component: () => import('@/pages/Product')
-  },
-  {
-    path: '/user',
-    name: 'user',
-    component: () => import('@/pages/User')
+    component: () => import('@/layout'),
+    children: [
+      {
+        path: '/',
+        name: 'index',
+        component: () => import('@/pages/Index')
+      },
+      {
+        path: 'dashboard',
+        name: 'dashboard',
+        component: () => import('@/pages/Dashboard')
+      },
+      {
+        path: '/product',
+        name: 'product',
+        component: () => import('@/pages/Product')
+      },
+      {
+        path: '/user',
+        name: 'user',
+        component: () => import('@/pages/User')
+      }
+    ]
   }
 ]
 
