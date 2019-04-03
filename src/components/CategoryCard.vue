@@ -1,0 +1,38 @@
+<template>
+  <v-card>
+    <v-img
+      :src="img"
+      height="200px"
+    >
+      <v-container
+        fill-height
+        fluid
+        pa-2
+      >
+        <v-layout fill-height>
+          <v-flex xs12 align-end flexbox>
+            <span class="headline white--text" v-text="title"></span>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-img>
+
+    <v-card-title primary-title>
+      <div class="headline">{{subTitle}}</div>
+    </v-card-title>
+
+  </v-card>
+</template>
+
+<script>
+export default {
+  props: {
+    title: String,
+    subTitle: String,
+    img: String
+  },
+  data () {
+    return {}
+  }
+}
+</script>
