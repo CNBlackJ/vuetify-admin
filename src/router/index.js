@@ -5,29 +5,40 @@ Vue.use(Router)
 
 const routes = [
   {
-    path: '/',
-    component: () => import('@/layout'),
+    path: '/admin',
+    component: () => import('@/layout/Admin'),
     children: [
       {
         path: '/',
         name: 'index',
-        component: () => import('@/pages/Index')
+        component: () => import('@/pages/Admin/Index')
       },
       {
         path: 'dashboard',
         name: 'dashboard',
-        component: () => import('@/pages/Dashboard')
+        component: () => import('@/pages/Admin/Dashboard')
       },
       {
-        path: '/product',
+        path: 'product',
         name: 'product',
-        component: () => import('@/pages/Product')
+        component: () => import('@/pages/Admin/Product')
       },
       {
-        path: '/user',
+        path: 'user',
         name: 'user',
-        component: () => import('@/pages/User')
+        component: () => import('@/pages/Admin/User')
       }
+    ]
+  },
+  {
+    path: '/',
+    component: () => import('@/layout/Client'),
+    children: [
+      {
+        path: '/',
+        name: 'index',
+        component: () => import('@/pages/Client/Index')
+      } 
     ]
   }
 ]
