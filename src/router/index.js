@@ -38,7 +38,27 @@ const routes = [
         path: '/',
         name: 'index',
         component: () => import('@/pages/Client/Index')
-      } 
+      },
+      {
+        path: 'products',
+        name: 'productList',
+        component: () => import('@/pages/Client/Product/list')
+      },
+      {
+        path: 'products/:id',
+        name: 'productDetail',
+        component: () => import('@/pages/Client/Product/detail')
+      },
+      {
+        path: 'carts',
+        name: 'carts',
+        component: () => import('@/pages/Client/Cart/')
+      },
+      {
+        path: 'users',
+        name: 'users',
+        component: () => import('@/pages/Client/User/')
+      }
     ]
   }
 ]

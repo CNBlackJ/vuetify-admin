@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex>
-      <v-card>
+      <v-card @click="onClick">
         <v-img
           :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
           height="200px"
@@ -40,6 +40,11 @@ export default {
   data () {
     return {
       show: false
+    }
+  },
+  methods: {
+    onClick () {
+      this.$router.push(`/products/1`)
     }
   }
 }

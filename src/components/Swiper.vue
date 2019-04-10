@@ -1,5 +1,5 @@
 <template>
-  <v-carousel>
+  <v-carousel :height="height||500">
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
@@ -10,6 +10,9 @@
 
 <script>
   export default {
+    props: {
+      height: Number
+    },
     data () {
       return {
         items: [
