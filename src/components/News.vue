@@ -8,7 +8,7 @@
 
     <v-layout row wrap>
       <v-flex v-for="i in 9" :key="i" xs12 sm6 md3>
-        <Card />
+        <ProductCard />
       </v-flex>
     </v-layout>
   </v-container>
@@ -18,7 +18,7 @@
 import ProductCard from './ProductCard'
 export default {
   components: {
-    Card: ProductCard
+    ProductCard
   }
 }
 </script>

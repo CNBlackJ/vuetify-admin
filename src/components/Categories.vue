@@ -7,7 +7,7 @@
     </v-layout>
     <v-layout row wrap>
       <v-flex v-for="i in 4" :key="i" xs12 sm6 md3>
-        <Card
+        <CategoryCard
           :title="`Pre-fab homes ${i}`"
           :img="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
           :subTitle="'Top western road trips'"/>
@@ -20,7 +20,7 @@
 import CategoryCard from './CategoryCard'
 export default {
   components: {
-    Card: CategoryCard
+    CategoryCard
   }
 }
 </script>
