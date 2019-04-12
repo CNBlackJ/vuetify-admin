@@ -12,9 +12,8 @@
       class="hidden-sm-and-down"
     ></v-text-field>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Link One</v-btn>
-      <v-btn flat>Link Two</v-btn>
-      <v-btn flat>Link Three</v-btn>
+      <v-btn flat>Home</v-btn>
+      <v-btn flat>Products</v-btn>
     </v-toolbar-items>
     <v-badge left>
       <template v-slot:badge>

@@ -2,6 +2,7 @@
   <v-card>
     <v-img
       :src="img"
+      :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
       height="200px"
     >
       <v-container

@@ -6,8 +6,9 @@
       <v-layout row wrap>
         <v-flex xs12 v-for="(item, i) in 6" :key="i">
           <v-img
-            :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
-            height="400px"
+            :src="`https://picsum.photos/300/600?image=${Math.floor(Math.random() * 100) + 1}`"
+            :lazy-src="`https://picsum.photos/10/6?image=${Math.floor(Math.random() * 100) + 1}`"
+            height="600px"
           >
           </v-img>
         </v-flex>

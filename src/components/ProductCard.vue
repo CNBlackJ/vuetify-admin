@@ -3,7 +3,8 @@
     <v-flex>
       <v-card @click="onClick">
         <v-img
-          :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
+          :src="`https://picsum.photos/500/300?image=${Math.floor(Math.random() * 100) + 1}`"
+          :lazy-src="`https://picsum.photos/10/6?image=${Math.floor(Math.random() * 100) + 1}`"
           height="200px"
         >
         </v-img>
