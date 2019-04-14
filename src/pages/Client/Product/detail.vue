@@ -1,5 +1,5 @@
 <template>
-  <div class="product-details">
+  <v-container>
     <InfoCard />
 
     <v-container>
@@ -15,31 +15,19 @@
       </v-layout>
     </v-container>
 
-    <v-container>
-      <v-layout justify-center align-center>
-        <v-flex class="display-2 font-weight-light text-md-center py-5">
-          Recommand for You
-        </v-flex>
-      </v-layout>
-      <v-layout row wrap justify-space-around>
-        <v-flex v-for="i in 3" :key="i" xs12 sm6 md3 justify-space-around class="pt-4">
-          <ProductCard
-            :title="`Pre-fab homes ${i}`"
-            :img="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
-            :subTitle="'Top western road trips'"/>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </div>
+    <Recommendation />    
+  </v-container>
 </template>
 
 <script>
 import InfoCard from './components/InfoCard'
 import ProductCard from '@/components/ProductCard'
+import Recommendation from '@/components/Recommendation'
 export default {
   components: {
     InfoCard,
-    ProductCard
+    ProductCard,
+    Recommendation
   },
   data () {
     return {

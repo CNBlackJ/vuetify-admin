@@ -4,20 +4,20 @@
 
     <Categories />
 
-    <News />
+    <NewIn />
   </div>
 </template>
 
 <script>
 import Swiper from '@/components/Swiper'
-import Categories from '@/components/Categories'
-import News from '@/components/News'
+import Categories from '@/components/Categories/index'
+import NewIn from '@/components/NewIn'
 
 export default {
   components: {
     Swiper,
     Categories,
-    News
+    NewIn
   }
 }
 </script>
