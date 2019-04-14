@@ -22,7 +22,7 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap justify-space-around>
-        <v-flex v-for="i in 3" :key="i" xs12 sm6 md3 justify-space-around>
+        <v-flex v-for="i in 3" :key="i" xs12 sm6 md3 justify-space-around class="pt-4">
           <ProductCard
             :title="`Pre-fab homes ${i}`"
             :img="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"

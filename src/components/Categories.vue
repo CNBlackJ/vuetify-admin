@@ -6,10 +6,10 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex v-for="i in 4" :key="i" xs12 sm6 md3>
+      <v-flex v-for="i in 4" :key="i" xs12 sm6 md3 lg4 xl3>
         <CategoryCard
           :title="`Pre-fab homes ${i}`"
-          :img="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
+          :img="`https://picsum.photos/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
           :subTitle="'Top western road trips'"/>
       </v-flex>
     </v-layout>

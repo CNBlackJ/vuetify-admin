@@ -1,24 +1,24 @@
 <template>
   <v-container grid-list-md>
     <v-layout row wrap>
-      <v-flex xs5>
+      <v-flex xs12 sm5 md5>
         <Swiper :height="420" />
       </v-flex>
       <v-spacer></v-spacer>
-      <v-flex xs6>
+      <v-flex xs12 sm6 md6>
         <div class="display-3 font-weight-medium">
           Belt Belt Belt Belt
         </div>
         <div class="display-1 font-weight-regular py-4">
           $60
         </div>
-        <v-flex xs12 sm6 d-flex>
+        <v-flex d-flex xs12 sm6 md6>
           <v-select
             :items="sizeItems"
             label="Size"
           ></v-select>
         </v-flex>
-        <v-flex xs6>
+        <v-flex xs12 sm6 md6>
           <Counter />
         </v-flex>
         <v-flex xs12 class="pt-4">

@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%">
+  <div id="index-page">
     <Swiper />
 
     <Categories />
@@ -21,3 +21,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  #index-page {
+    .v-carousel {
+      width: 100%;
+    }
+  }
+</style>
