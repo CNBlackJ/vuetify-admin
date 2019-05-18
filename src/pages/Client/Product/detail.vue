@@ -21,12 +21,10 @@
 
 <script>
 import InfoCard from './components/InfoCard'
-import ProductCard from '@/components/ProductCard'
 import Recommendation from '@/components/Recommendation'
 export default {
   components: {
     InfoCard,
-    ProductCard,
     Recommendation
   },
   data () {

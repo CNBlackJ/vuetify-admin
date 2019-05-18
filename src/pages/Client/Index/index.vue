@@ -4,20 +4,36 @@
 
     <Categories />
 
-    <NewIn />
+    <FeaturedProduct />
+
+    <BusinessSolution />
+
+    <FactoryPrice />
+
+    <SecretMarket />
+
+    <HairBrand />
   </div>
 </template>
 
 <script>
-import Swiper from '@/components/Swiper'
-import Categories from '@/components/Categories/index'
-import NewIn from '@/components/NewIn'
+import Swiper from './components/Swiper/index'
+import Categories from './components/Categories/index'
+import FeaturedProduct from './components/FeaturedProduct/index'
+import BusinessSolution from './components/BusinessSolution/index'
+import FactoryPrice from './components/FactoryPrice/index'
+import SecretMarket from './components/SecretMarket/index'
+import HairBrand from './components/HairBrand/index'
 
 export default {
   components: {
     Swiper,
     Categories,
-    NewIn
+    FeaturedProduct,
+    BusinessSolution,
+    FactoryPrice,
+    SecretMarket,
+    HairBrand
   }
 }
 </script>
