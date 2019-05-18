@@ -21,7 +21,7 @@
     </v-layout>
 
     <v-layout align-center justify-center row>
-      <v-btn color="success">GET YOUR OWN SOLUTION NOW</v-btn>
+      <v-btn color="primary">GET YOUR OWN SOLUTION NOW</v-btn>
     </v-layout>
   </v-container>
 </template>

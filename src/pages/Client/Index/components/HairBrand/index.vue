@@ -27,7 +27,7 @@
                 style="height: 100%;"
               >
                 <v-layout class="image-btn" align-center justify-center row>
-                  <v-btn style="z-index: 10" color="success">CUSTOMIZE YOUR BRANDING NOW</v-btn>
+                  <v-btn style="z-index: 10" color="primary">CUSTOMIZE YOUR BRANDING NOW</v-btn>
                 </v-layout>
               </div>
             </v-expand-transition>

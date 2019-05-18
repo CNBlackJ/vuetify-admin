@@ -22,10 +22,10 @@
             <v-icon>share</v-icon>
           </v-btn>
           <v-spacer></v-spacer>
-          <v-btn @click="onAddToCart">
+          <v-btn @click="onAddToCart" class="hidden-sm-and-down">
             <v-icon>add_shopping_cart</v-icon>
           </v-btn>
-          <v-btn color="#dd127b" dark>Inquiry</v-btn>
+          <v-btn color="primary" dark>Inquiry</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>

@@ -1,12 +1,12 @@
 <template>
-  <v-container>
+  <v-container pa-0>
     <InfoCard />
 
-    <v-container>
+    <v-container pa-0>
       <v-layout row wrap>
         <v-flex xs12 v-for="(item, i) in 6" :key="i">
           <v-img
-            :src="`https://picsum.photos/300/600?image=${Math.floor(Math.random() * 100) + 1}`"
+            :src="`https://picsum.photos/1000/400?image=${Math.floor(Math.random() * 100) + 1}`"
             :lazy-src="`https://picsum.photos/10/6?image=${Math.floor(Math.random() * 100) + 1}`"
             height="600px"
           >
@@ -15,7 +15,7 @@
       </v-layout>
     </v-container>
 
-    <Recommendation />    
+    <Recommendation />
   </v-container>
 </template>
 

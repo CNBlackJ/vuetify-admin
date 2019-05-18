@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-md>
+  <v-container grid-list-md pa-0>
     <v-layout row wrap>
       <v-flex xs12 sm5 md5>
         <Swiper :height="420" />
@@ -18,7 +18,7 @@
             label="Size"
           ></v-select>
         </v-flex>
-        <v-flex xs12 sm6 md6>
+        <v-flex xl6 md6 sm6 xs6>
           <Counter />
         </v-flex>
         <v-flex xs12 class="pt-4">

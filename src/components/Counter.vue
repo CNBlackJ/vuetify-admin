@@ -1,21 +1,14 @@
 <template>
   <v-layout row wrap align-center id="counter">
-    <v-btn flat fab small @click="onDesCounter">
-      <v-icon>remove</v-icon>
-    </v-btn>
-    <v-flex xs4>
-      <v-text-field
-        label="Quantity"
-        flat
-        small
-        inline
-        hide-details
-        v-model="counter"
-      ></v-text-field>
-    </v-flex>
-    <v-btn fab flat small @click="onInsCounter">
-      <v-icon>add</v-icon>
-    </v-btn>
+    <v-text-field
+      v-model="counter"
+      type="number"
+      label="Number"
+      append-outer-icon="add"
+      @click:append-outer="onInsCounter"
+      prepend-icon="remove"
+      @click:prepend="onDesCounter">
+    </v-text-field>
   </v-layout>
 </template>
 
