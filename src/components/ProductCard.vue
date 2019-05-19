@@ -17,16 +17,18 @@
           </div>
         </v-card-title>
 
-        <v-card-actions>
-          <v-btn icon flat>
-            <v-icon>share</v-icon>
-          </v-btn>
-          <v-spacer></v-spacer>
-          <v-btn @click="onAddToCart" class="hidden-sm-and-down">
-            <v-icon>add_shopping_cart</v-icon>
-          </v-btn>
-          <v-btn color="primary" dark>Inquiry</v-btn>
-        </v-card-actions>
+        <v-container class="pt-0">
+          <v-layout row wrap>
+            <v-btn icon flat class="hidden-sm-and-down">
+              <v-icon>share</v-icon>
+            </v-btn>
+            <v-btn icon flat @click="onAddToCart">
+              <v-icon>add_shopping_cart</v-icon>
+            </v-btn>
+            <v-spacer></v-spacer>
+            <v-btn color="primary" dark>Inquiry</v-btn>
+          </v-layout>
+        </v-container>
       </v-card>
     </v-flex>
 

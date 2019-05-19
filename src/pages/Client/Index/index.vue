@@ -4,11 +4,19 @@
 
     <Categories />
 
+    <v-divider></v-divider>
+
     <FeaturedProduct />
+
+    <v-divider></v-divider>
 
     <BusinessSolution />
 
+    <v-divider></v-divider>
+
     <FactoryPrice />
+
+    <v-divider></v-divider>
 
     <SecretMarket />
 

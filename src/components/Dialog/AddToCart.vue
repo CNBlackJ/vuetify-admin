@@ -3,34 +3,41 @@
     <v-dialog
       @input="onHideDialog"
       v-model="dialog"
-      max-width="290"
+      max-width="500"
     >
       <v-card>
-        <v-card-title class="headline">Adding to cart succeed!</v-card-title>
+        <v-card-title class="headline">Adding to cart succeed</v-card-title>
 
-        <v-card-text class="headline">
-          <span style="color: #dd127b">3</span> items in cart.
+        <v-divider></v-divider>
+
+        <v-card-text class="subheading text-xs-center">
+          <p>
+            <span style="color: #dd127b">3</span> items in cart.
+          </p>
+          <p>
+            Subtotal: <span style="color: #dd127b">USD $ 389.00</span>
+          </p>
         </v-card-text>
 
-        <v-card-actions>
-          <v-layout align-center justify-center column fill-height>
-            <v-btn
-              color="#dd127b"
-              dark
-              @click="onProcessCheckout"
-            >
-              Proccess to Checkout
-            </v-btn>
+        <v-divider></v-divider>
 
-            <v-btn
-              color="#dd127b"
-              flat
-              @click="onHideDialog"
-            >
-              Return to Shopping
-            </v-btn>
-          </v-layout>
-        </v-card-actions>
+        <v-card-text class="text-md-center text-xs-center">
+          <v-btn
+            color="primary"
+            flat
+            @click="onHideDialog"
+          >
+            <span>Return to Shopping</span>
+          </v-btn>
+
+          <v-btn
+            color="primary"
+            dark
+            @click="onProcessCheckout"
+          >
+            Proccess to Checkout
+          </v-btn>
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-layout>

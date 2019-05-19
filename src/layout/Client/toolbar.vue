@@ -1,7 +1,7 @@
 <template>
-  <v-toolbar color="indigo" dark fixed app>
+  <v-toolbar color="black" dark fixed app>
     <v-toolbar-side-icon @click.stop="onOpenDrawer"></v-toolbar-side-icon>
-    <v-toolbar-title @click="onClickTitle">HERHAIRWORLD</v-toolbar-title>
+    <v-toolbar-title class="hidden-sm-and-down" @click="onClickTitle">HERHAIRWORLD</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-text-field
       flat
@@ -11,11 +11,11 @@
       label="Search"
       class="hidden-sm-and-down"
     ></v-text-field>
-    <v-spacer></v-spacer>
-    <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Home</v-btn>
-      <v-btn flat>Products</v-btn>
+    <v-spacer class="hidden-sm-and-down"></v-spacer>
+    <v-spacer class="hidden-sm-and-down"></v-spacer>
+    <v-toolbar-items>
+      <v-btn flat @click="onClickHome">Home</v-btn>
+      <v-btn flat @click="onClickProducts">Products</v-btn>
       <v-btn flat>
         <v-badge right>
           <template v-slot:badge>
@@ -24,6 +24,7 @@
           <v-icon
             large
             color="grey lighten-1"
+            @click="onClickCart"
           >
             shopping_cart
           </v-icon>
@@ -44,6 +45,15 @@ export default {
     },
     onClickTitle () {
       this.$router.push('/')
+    },
+    onClickCart () {
+      this.$router.push('/carts')
+    },
+    onClickProducts () {
+      this.$router.push('/products')
+    },
+    onClickHome () {
+      this.onClickTitle()
     }
   }
 }

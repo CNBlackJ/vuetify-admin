@@ -15,6 +15,30 @@
       </v-list-tile>
       <v-list-tile>
         <v-list-tile-action>
+          <v-icon>home</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Products</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+      <v-list-tile>
+        <v-list-tile-action>
+          <v-icon>home</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Category</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+      <v-list-tile>
+        <v-list-tile-action>
+          <v-icon>shopping_cart</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Cart</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+      <v-list-tile>
+        <v-list-tile-action>
           <v-icon>contact_mail</v-icon>
         </v-list-tile-action>
         <v-list-tile-content>

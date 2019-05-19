@@ -1,7 +1,7 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-xl class="pa-0">
     <v-layout justify-center align-center>
-      <v-flex class="display-2 font-weight-light text-md-center py-5">
+      <v-flex class="display-2 font-weight-light text-md-center py-5" :class="{ 'display-1': $vuetify.breakpoint.xs }">
         SECRET OF HAIR MARKET
       </v-flex>
     </v-layout>
