@@ -1,6 +1,6 @@
 <template>
   <form>
-    <v-container pa-0 grid-list-xl>
+    <v-container pa-0 grid-list-lg>
       <v-layout align-center justify-space-around row fill-height wrap>
         <v-flex xs12 sm12 md6 lg4 xl4>
           <v-text-field

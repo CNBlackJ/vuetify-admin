@@ -16,7 +16,7 @@
       v-for="n in categoryList.length"
       :key="n"
     >
-      <v-container grid-list-xl pa-0>
+      <v-container grid-list-md pa-0>
         <v-layout row wrap class="pt-4">
           <v-flex v-for="i in 9" :key="i" xl3 lg3 md3 sm6 xs6>
             <ProductCard />

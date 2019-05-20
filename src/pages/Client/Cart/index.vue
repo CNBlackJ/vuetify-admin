@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="pa-0">
     <v-card>
       <v-card-title>
         Cart
@@ -20,7 +20,32 @@
           v-for="n in tabList.length"
           :key="n"
         >
-          <Table />
+          <div class="hidden-sm-and-down">
+            <Table />
+          </div>
+          <div class="hidden-sm-and-up">
+            <List />
+            <v-card color="primary darken-1" class="white--text">
+              <v-card-text class="text-xs-right">
+                <span>
+                  Subtotal: 
+                  <span>$ 100.00</span>
+                </span>
+                <span>
+                  Shipping: 
+                  <span>$ 29.99</span>
+                </span>
+                <span>
+                  Amount: 
+                  <span>$ 129.99</span>
+                </span>
+              </v-card-text>
+              <v-divider light></v-divider>
+              <v-card-text class="text-xs-right">
+                <v-btn flat dark>Check Out</v-btn>
+              </v-card-text>
+            </v-card>
+          </div>
         </v-tab-item>
       </v-tabs>
     </v-card>
@@ -28,12 +53,14 @@
 </template>
 
 <script>
-import Table from './components/table'
+import Table from './components/Table'
+import List from './components/List'
 import Card from './components/Card'
 
 export default {
   components: {
     Table,
+    List,
     Card
   },
   data () {

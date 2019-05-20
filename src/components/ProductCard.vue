@@ -10,23 +10,28 @@
         >
         </v-img>
 
-        <v-card-title primary-title @click="goProductDetail">
+        <v-card-title @click="goProductDetail" :class="{ 'pa-2': $vuetify.breakpoint.smAndDown }">
           <div>
-            <div class="headline">Vnet TShirt</div>
+            <div :class="{
+                'headline': $vuetify.breakpoint.smAndUp,
+                'subheading': $vuetify.breakpoint.smAndDown
+              }">
+              Vnet TShirt
+            </div>
             <span class="grey--text">$ {{ Math.floor(Math.random() * 100).toFixed(2) }}</span>
           </div>
         </v-card-title>
 
         <v-container class="pt-0">
           <v-layout row wrap>
-            <v-btn icon flat class="hidden-sm-and-down">
+            <v-btn small icon flat class="hidden-sm-and-down">
               <v-icon>share</v-icon>
             </v-btn>
-            <v-btn icon flat @click="onAddToCart">
+            <v-btn small icon flat @click="onAddToCart">
               <v-icon>add_shopping_cart</v-icon>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn @click="onInquiry" color="primary" dark>Inquiry</v-btn>
+            <v-btn small @click="onInquiry" color="primary" dark>Inquiry</v-btn>
           </v-layout>
         </v-container>
       </v-card>
