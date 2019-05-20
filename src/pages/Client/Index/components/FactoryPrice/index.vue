@@ -27,7 +27,7 @@
                 style="height: 100%;"
               >
                 <v-layout class="image-btn" align-center justify-center row>
-                  <v-btn style="z-index: 10" color="primary">GET FACTORY PRICE NOW</v-btn>
+                  <v-btn @click="onInquiry" style="z-index: 10" color="primary">GET FACTORY PRICE NOW</v-btn>
                 </v-layout>
               </div>
             </v-expand-transition>
@@ -38,6 +38,18 @@
 
   </v-container>
 </template>
+
+<script>
+export default {
+  methods: {
+    onInquiry () {
+      this.$router.push({
+        path: '/inquiry'
+      })
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
   .image-hover {

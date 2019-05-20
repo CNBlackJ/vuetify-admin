@@ -55,6 +55,11 @@ const routes = [
         component: () => import('@/pages/Client/Cart/')
       },
       {
+        path: 'inquiry',
+        name: 'inquiry',
+        component: () => import('@/pages/Client/Inquiry/')
+      },
+      {
         path: 'users',
         name: 'users',
         component: () => import('@/pages/Client/User/')

@@ -21,7 +21,7 @@
     </v-layout>
 
     <v-layout align-center justify-center row>
-      <v-btn color="primary">GET YOUR OWN SOLUTION NOW</v-btn>
+      <v-btn @click="onInquiry" color="primary">GET YOUR OWN SOLUTION NOW</v-btn>
     </v-layout>
   </v-container>
 </template>
@@ -32,6 +32,13 @@ import Card from './Card'
 export default {
   components: {
     Card
+  },
+  methods: {
+    onInquiry () {
+      this.$router.push({
+        path: '/inquiry'
+      })
+    }
   }
 }
 </script>

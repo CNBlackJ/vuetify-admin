@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card @click="onClickCard">
     <v-img
       :src="img"
       :lazy-src="`https://picsum.photos/10/6?image=${Math.floor(Math.random() * 100) + 1}`"
@@ -32,8 +32,12 @@ export default {
     subTitle: String,
     img: String
   },
-  data () {
-    return {}
+  methods: {
+    onClickCard () {
+      this.$router.push({
+        path: '/products'
+      })
+    }
   }
 }
 </script>

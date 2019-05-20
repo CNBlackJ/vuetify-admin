@@ -26,7 +26,7 @@
               <v-icon>add_shopping_cart</v-icon>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn color="primary" dark>Inquiry</v-btn>
+            <v-btn @click="onInquiry" color="primary" dark>Inquiry</v-btn>
           </v-layout>
         </v-container>
       </v-card>
@@ -64,6 +64,11 @@ export default {
     },
     onHideDialog () {
       this.showDialog = false
+    },
+    onInquiry () {
+      this.$router.push({
+        path: '/inquiry'
+      })
     }
   }
 }
