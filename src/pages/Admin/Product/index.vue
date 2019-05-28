@@ -1,5 +1,17 @@
 <template>
-  <div>
-    I am product
-  </div>
+  <v-container>
+    <v-layout>
+      <ProductTable />
+    </v-layout>
+  </v-container>
 </template>
+
+<script>
+import Table from './components/Table'
+
+export default {
+  components: {
+    ProductTable: Table
+  }
+}
+</script>

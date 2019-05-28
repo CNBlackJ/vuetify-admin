@@ -19,9 +19,39 @@ const routes = [
         component: () => import('@/pages/Admin/Dashboard')
       },
       {
+        path: 'pageconfig',
+        name: 'pageconfig',
+        component: () => import('@/pages/Admin/PageConfig')
+      },
+      {
         path: 'product',
         name: 'product',
         component: () => import('@/pages/Admin/Product')
+      },
+      {
+        path: 'product/:id',
+        name: 'productDetails',
+        component: () => import('@/pages/Admin/Product/detail')
+      },
+      {
+        path: 'inquiry',
+        name: 'inquiry',
+        component: () => import('@/pages/Admin/Inquiry')
+      },
+      {
+        path: 'category',
+        name: 'category',
+        component: () => import('@/pages/Admin/Category')
+      },
+      {
+        path: 'price',
+        name: 'price',
+        component: () => import('@/pages/Admin/Price')
+      },
+      {
+        path: 'order',
+        name: 'order',
+        component: () => import('@/pages/Admin/Order')
       },
       {
         path: 'user',

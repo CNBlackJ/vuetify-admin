@@ -7,6 +7,7 @@
   >
     <v-list dense>
       <template v-for="item in items">
+        
         <v-layout
           v-if="item.heading"
           :key="item.heading"
@@ -22,6 +23,7 @@
             <a href="#!" class="body-2 black--text">EDIT</a>
           </v-flex>
         </v-layout>
+
         <v-list-group
           v-else-if="item.children"
           :key="item.text"
@@ -52,7 +54,11 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list-group>
-        <v-list-tile v-else :key="item.text">
+
+        <v-list-tile
+          v-else
+          :key="item.text"
+          @click="$router.push({ path: item.path })">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -81,9 +87,14 @@ export default {
     return {
       drawer: null,
       items: [
-        { icon: 'contacts', text: 'Contacts' },
-        { icon: 'history', text: 'Frequently contacted' },
-        { icon: 'content_copy', text: 'Duplicates' },
+        { icon: 'contacts', text: 'Dashboard', path: '/admin/dashboard' },
+        { icon: 'history', text: '首页配置', path: '/admin/pageconfig' },
+        { icon: 'content_copy', text: '产品列表', path: '/admin/product' },
+        { icon: 'settings', text: '询盘用户', path: '/admin/inquiry' },
+        { icon: 'chat_bubble', text: '类别管理', path: '/admin/category' },
+        { icon: 'help', text: '订单管理', path: '/admin/order' },
+        { icon: 'phonelink', text: '定价管理', path: '/admin/price' },
+        { icon: 'keyboard', text: '用户管理', path: '/admin/user' },
         {
           icon: 'keyboard_arrow_up',
           'icon-alt': 'keyboard_arrow_down',
@@ -105,12 +116,7 @@ export default {
             { text: 'Undo changes' },
             { text: 'Other contacts' }
           ]
-        },
-        { icon: 'settings', text: 'Settings' },
-        { icon: 'chat_bubble', text: 'Send feedback' },
-        { icon: 'help', text: 'Help' },
-        { icon: 'phonelink', text: 'App downloads' },
-        { icon: 'keyboard', text: 'Go to the old version' }
+        }
       ]
     }
   }
