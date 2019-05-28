@@ -3,7 +3,8 @@
     <v-text-field
       v-model="counter"
       type="number"
-      label="Number"
+      :label="label"
+      :required="required"
       append-outer-icon="add"
       @click:append-outer="onInsCounter"
       prepend-icon="remove"
@@ -14,6 +15,16 @@
 
 <script>
 export default {
+  props: {
+    label: {
+      type: String,
+      default: 'Number'
+    },
+    required: {
+      type: Boolean,
+      default: true
+    }
+  },
   data () {
     return {
       counter: 1

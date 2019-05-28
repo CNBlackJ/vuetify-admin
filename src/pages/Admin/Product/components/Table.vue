@@ -1,7 +1,10 @@
 <template>
   <v-card>
     <v-card-title>
-      Nutrition
+      产品列表
+      <v-btn flat icon color="primary" @click="onAddProduct">
+        <v-icon dark>add</v-icon>
+      </v-btn>
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
@@ -75,6 +78,9 @@ export default {
       this.$router.push({
         path: `/admin/product/${_id}`
       })
+    },
+    onAddProduct () {
+      this.$emit('addProduct', true)
     }
   }
 }

@@ -35,7 +35,7 @@ const routes = [
       },
       {
         path: 'inquiry',
-        name: 'inquiry',
+        name: 'adminInquiry',
         component: () => import('@/pages/Admin/Inquiry')
       },
       {

@@ -1,11 +1,17 @@
 <template>
   <v-container grid-list-md class="admin-detail">
-    <v-layout class="pb-2">
-      <v-flex>
-        <span class="title">
-          产品详情
-        </span>
-      </v-flex>
+    <v-layout class="pb-2" align-center justify-space-between row>
+      <span class="title">
+        产品详情
+      </span>
+      <div>
+        <v-btn flat icon color="info">
+          <v-icon dark>edit</v-icon>
+        </v-btn>
+        <v-btn flat icon color="error">
+          <v-icon dark>delete</v-icon>
+        </v-btn>
+      </div>
     </v-layout>
 
     <v-divider></v-divider>
@@ -28,11 +34,11 @@
         </div>
         <div class="pa-2">
           <span class="subheading">价格：</span>
-          <span class="body-1">{{product.price}}</span>
+          <span class="body-1">$ {{product.price}}</span>
         </div>
         <div class="pa-2">
           <span class="subheading">类别：</span>
-          <span class="body-1">{{product.category}}</span>
+          <span class="body-1">{{product.category.name}}</span>
         </div>
         <div class="pa-2">
           <span class="subheading">排序：</span>
@@ -66,7 +72,9 @@ export default {
   },
   data () {
     return {
-      product: {}
+      product: {
+        category: {}
+      }
     }
   },
   async created () {
