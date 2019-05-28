@@ -1,3 +1,5 @@
 export { default as app } from './app'
 export { default as product } from './product'
 export { default as category } from './category'
+export { default as inquiry } from './inquiry'
+export { default as order } from './order'

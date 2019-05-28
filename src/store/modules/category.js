@@ -18,7 +18,7 @@ const mutations = {
 
 const actions = {
   async getCategoryList ({ commit }, payload) {
-    const { rows } = await categoryApi.list(payload)
+    const rows = await categoryApi.list(payload)
     commit('SET_CATEGORY_LIST', rows)
     commit('SET_CATEGORY_DATA', listToMap(rows))
   }
