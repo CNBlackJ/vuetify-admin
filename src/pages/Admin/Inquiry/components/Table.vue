@@ -20,13 +20,13 @@
       <template v-slot:items="props">
         <tr @click="onClickRow(props.item)">
           <td>{{ props.item.name }}</td>
-          <td class="text-xs-center">{{ props.item.email }}</td>
-          <td class="text-xs-center">{{ props.item.country }}</td>
-          <td class="text-xs-center">{{ props.item.mobile }}</td>
-          <td class="text-xs-center">{{ props.item.businessTypes.join(',') }}</td>
-          <td class="text-xs-center">{{ props.item.sendPage ? props.item.sendPage.path : '-' }}</td>
-          <td class="text-xs-center">{{ props.item.comment }}</td>
-          <td class="text-xs-center">{{ props.item.createdAt }}</td>
+          <td class="text-xs-left">{{ props.item.email }}</td>
+          <td class="text-xs-left ellipsis">{{ props.item.country }}</td>
+          <td class="text-xs-left">{{ props.item.mobile }}</td>
+          <td class="text-xs-left">{{ props.item.businessTypes.join(',') }}</td>
+          <td class="text-xs-left">{{ props.item.sendPage ? props.item.sendPage.path : '-' }}</td>
+          <td class="text-xs-left">{{ props.item.comment }}</td>
+          <td class="text-xs-left">{{ props.item.createdAt }}</td>
         </tr>
       </template>
       <template v-slot:no-results>

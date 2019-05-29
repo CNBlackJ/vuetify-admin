@@ -22,6 +22,14 @@
           <td>{{ props.item.index }}</td>
           <td class="text-xs-left">{{ props.item.name }}</td>
           <td class="text-xs-left">{{ props.item.createdAt }}</td>
+          <td class="justify-center layout px-0">
+            <v-icon color="blue darken-2" small class="mr-2" @click.stop="onEditItem(props.item)">
+              edit
+            </v-icon>
+            <v-icon color="red darken-2" small @click.stop="onDeleteItem(props.item)">
+              delete
+            </v-icon>
+          </td>
         </tr>
       </template>
       <template v-slot:no-results>
@@ -53,14 +61,21 @@ export default {
       },
       headers: [
         { text: '序号', value: 'index' },
-        { text: '名称', value: 'name', align: 'center' },
-        { text: '创建时间', value: 'createdAt', align: 'center' }
+        { text: '名称', value: 'name' },
+        { text: '创建时间', value: 'createdAt' },
+        { text: '操作', value: 'name', align: 'center', sortable: false }
       ]
     }
   },
   methods: {
     onClickRow ({ _id }) {
       console.log(_id)
+    },
+    onEditItem (item) {
+      console.log(item)
+    },
+    onDeleteItem (item) {
+      console.log(item)
     }
   }
 }

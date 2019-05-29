@@ -1,10 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      产品列表
-      <v-btn flat icon color="primary" @click="onAddProduct">
-        <v-icon dark>add</v-icon>
-      </v-btn>
+      管理员权限管理
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
@@ -16,18 +13,17 @@
     </v-card-title>
     <v-data-table
       :headers="headers"
-      :items="productList"
+      :items="userList"
       :search="search"
       :pagination.sync="pagination"
     >
       <template v-slot:items="props">
         <tr @click="onClickRow(props.item)">
-          <td>{{ props.item.name }}</td>
-          <td class="text-xs-right">{{ props.item.price }}</td>
-          <td class="text-xs-right">{{ props.item.color }}</td>
-          <td class="text-xs-right">{{ props.item.category.name }}</td>
-          <td class="text-xs-right">{{ props.item.quantity }}</td>
-          <td class="text-xs-right">{{ props.item.package }}</td>
+          <td>{{ props.index + 1 }}</td>
+          <td class="text-xs-center">{{ props.item.username }}</td>
+          <td class="text-xs-center">{{ props.item.role }}</td>
+          <td class="text-xs-center">{{ '******' }}</td>
+          <td class="text-xs-center">{{ props.item.createdAt }}</td>
           <td class="justify-center layout px-0">
             <v-icon color="blue darken-2" small class="mr-2" @click.stop="onEditItem(props.item)">
               edit
@@ -53,11 +49,11 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      productList: state => state.product.productList
+      userList: state => state.user.userList
     })
   },
   created () {
-    this.$store.dispatch('product/getProductList', {})
+    this.$store.dispatch('user/getUserList', {})
   },
   data () {
     return {
@@ -66,30 +62,18 @@ export default {
         rowsPerPage: 10
       },
       headers: [
-        {
-          text: '名称',
-          align: 'left',
-          sortable: false,
-          value: 'name',
-          width: '500px'
-        },
-        { text: '价格', value: 'price' },
-        { text: '颜色', value: 'color' },
-        { text: '类别', value: 'category.name' },
-        { text: '数量', value: 'quantity' },
-        { text: '包装', value: 'package' },
-        { text: '操作', value: '', sortable: false }
+        { text: '序号', value: '_id' },
+        { text: '用户名', value: 'username', align: 'center' },
+        { text: '角色', value: 'role', align: 'center' },
+        { text: '密码', value: 'password', align: 'center' },
+        { text: '创建时间', value: 'createdAt', align: 'center' },
+        { text: '操作', value: 'name', sortable: false }
       ]
     }
   },
   methods: {
     onClickRow ({ _id }) {
-      this.$router.push({
-        path: `/admin/product/${_id}`
-      })
-    },
-    onAddProduct () {
-      this.$emit('addProduct', true)
+      console.log(_id)
     },
     onEditItem (item) {
       console.log(item)
