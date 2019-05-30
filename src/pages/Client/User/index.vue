@@ -1,5 +1,5 @@
 <template>
   <div>
-    I am product
+    I am user
   </div>
 </template>

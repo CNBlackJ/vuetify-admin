@@ -1,5 +1,5 @@
 <template>
   <div>
-    I am user page
+    I am pageconfig
   </div>
 </template>
