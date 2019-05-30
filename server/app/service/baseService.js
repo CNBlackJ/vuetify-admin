@@ -2,31 +2,30 @@ const Service = require('egg').Service
 const ObjectId = require('mongoose').Types.ObjectId
 
 class BaseService extends Service {
-
   constructor (ctx, resource) {
     super(ctx)
     this.resource = resource
   }
 
   async create(payload) {
-    const address = await this.ctx.model[this.resource].create(payload)
-    return address
+    const result = await this.ctx.model[this.resource].create(payload)
+    return result
   }
   async list({ limit = 10, skip = 0, sort = '' }) {
-    const addresss = await this.ctx.model[this.resource].find({
+    const results = await this.ctx.model[this.resource].find({
       isDeleted: false
     }).sort(sort).skip(Number(skip)).limit(Number(limit))
-    return addresss
+    return results
   }
   async get(id) {
-    const address = await this.ctx.model[this.resource].find({
+    const result = await this.ctx.model[this.resource].findOne({
       _id: ObjectId(id),
       isDeleted: false
     })
-    return address
+    return result
   }
   async update(id, payload) {
-    const address = await this.ctx.model[this.resource].findOneAndUpdate({
+    const result = await this.ctx.model[this.resource].findOneAndUpdate({
       _id: ObjectId(id),
       isDeleted: false
     }, {
@@ -34,7 +33,7 @@ class BaseService extends Service {
     }, {
       new: true
     })
-    return address
+    return result
   }
   async delete(id) {
     return this.update(id, { isDeleted: true })

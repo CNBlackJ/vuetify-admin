@@ -43,8 +43,12 @@ module.exports = class ManagerController extends Controller {
     })
     const id = ctx.params.id
     const result = await ctx.service[this.serviceName].get(id)
-    ctx.body = result
-    ctx.status = 200
+    if (result) {
+      ctx.body = result
+      ctx.status = 200
+    } else {
+      ctx.status = 404
+    }
   }
 
   async update () {
@@ -57,9 +61,14 @@ module.exports = class ManagerController extends Controller {
     })
     const id = ctx.params.id
     const payload = ctx.request.body
-    const result = await ctx.service[this.serviceName].update(id, payload)
-    ctx.body = result
-    ctx.status = 200
+    const isExist = await ctx.service[this.serviceName].get(id)
+    if (isExist) {
+      const result = await ctx.service[this.serviceName].update(id, payload)
+      ctx.body = result
+      ctx.status = 200
+    } else {
+      ctx.status = 404
+    }
   }
 
   async destroy () {
@@ -71,8 +80,12 @@ module.exports = class ManagerController extends Controller {
       ...this.validators.destroy
     })
     const id = ctx.params.id
-    const result = await ctx.service.manager.delete(id)
-    ctx.body = result
-    ctx.status = 204
+    const isExist = await ctx.service[this.serviceName].get(id)
+    if (isExist) {
+      await ctx.service.manager.delete(id)
+      ctx.status = 204
+    } else {
+      ctx.status = 404
+    }
   }
 }
