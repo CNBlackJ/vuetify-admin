@@ -23,6 +23,19 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true
+    },
+    domainWhiteList: [ 'http://localhost:8080' ]
+  }
+
+  config.cors = {
+    credentials:true,
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
+  }
+
   config.mongoose = {
     client: {
       url: 'mongodb://127.0.0.1/shop',

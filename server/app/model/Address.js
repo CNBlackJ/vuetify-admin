@@ -19,6 +19,8 @@ module.exports = app => {
       default: false
     },
     isDeleted: { type: Boolean, default: false }
+  }, {
+    timestamps: true
   })
 
   return mongoose.model('Address', UserSchema)

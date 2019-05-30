@@ -9,5 +9,13 @@ module.exports = {
   mogoose: {
     enable: true,
     package: 'egg-mongoose'
+  },
+  cors: {
+    enable: true,
+    package: 'egg-cors'
+  },
+  validator: {
+    enable: true,
+    package: 'egg-joi-validate'
   }
-};
+}
