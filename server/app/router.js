@@ -6,10 +6,14 @@
 module.exports = app => {
   const { router, controller } = app
 
+  const admin = app.role.can('admin')
   app.passport.mount('github')
 
-  router.get('/', controller.home.index)
+  router.get('/', app.jwt, controller.home.index)
+
+  // Auth
+  router.post('/api/auth', controller.auth.login)
 
   // Manager
-  router.resources('managers', '/api/managers', controller.manager)
+  router.resources('managers', '/api/managers', app.jwt, admin, controller.manager)
 };

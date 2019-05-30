@@ -10,10 +10,12 @@
     "egg": "^2.15.1",
     "egg-cors": "^2.2.0",
     "egg-joi-validate": "^1.0.0",
+    "egg-jwt": "^3.1.6",
     "egg-mongoose": "^3.2.0",
     "egg-passport": "^2.0.1",
     "egg-passport-github": "^1.0.0",
-    "egg-scripts": "^2.11.0"
+    "egg-scripts": "^2.11.0",
+    "egg-userrole": "^2.1.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",

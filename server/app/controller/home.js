@@ -18,18 +18,7 @@ class HomeController extends Controller {
       </div>`;
     } else {
       ctx.session.returnTo = ctx.path;
-      ctx.body = `
-        <div>
-          <h2>${ctx.path}</h2>
-          <hr>
-          Login with
-          <a href="/passport/weibo">Weibo</a> | <a href="/passport/github">Github</a> |
-          <a href="/passport/bitbucket">Bitbucket</a> | <a href="/passport/twitter">Twitter</a> |
-          <a href="/passport/yuque">YuQue 语雀</a>
-          <hr>
-          <a href="/">Home</a> | <a href="/user">User</a>
-        </div>
-      `;
+      ctx.body = ctx.state.user
     }
   }
 }

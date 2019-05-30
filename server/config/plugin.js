@@ -25,5 +25,13 @@ module.exports = {
   passportGithub: {
     enable: true,
     package: 'egg-passport-github'
+  },
+  jwt: {
+    enable: true,
+    package: 'egg-jwt'
+  },
+  userrole: {
+    enable: true,
+    package: 'egg-userrole'
   }
 }
