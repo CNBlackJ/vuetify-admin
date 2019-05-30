@@ -1,6 +1,7 @@
-import { userApi } from '@/apis'
-
+import Api from '@/apis/api'
 import listToMap from '@/utils/listToMap'
+
+const userApi = new Api('adminUsers')
 
 const state = {
   userList: [],

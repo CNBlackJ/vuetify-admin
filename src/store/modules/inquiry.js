@@ -1,6 +1,7 @@
-import { inquiryApi } from '@/apis'
-
+import Api from '@/apis/api'
 import listToMap from '@/utils/listToMap'
+
+const inquiryApi = new Api('inquiries')
 
 const state = {
   inquiryList: [],

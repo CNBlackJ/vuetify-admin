@@ -1,6 +1,7 @@
-import { productApi } from '@/apis'
-
+import Api from '@/apis/api'
 import listToMap from '@/utils/listToMap'
+
+const productApi = new Api('products')
 
 const state = {
   productList: [],

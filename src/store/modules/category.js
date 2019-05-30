@@ -1,6 +1,7 @@
-import { categoryApi } from '@/apis'
-
+import Api from '@/apis/api'
 import listToMap from '@/utils/listToMap'
+
+const categoryApi = new Api('categories')
 
 const state = {
   categoryList: [],
