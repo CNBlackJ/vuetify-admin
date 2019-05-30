@@ -17,5 +17,13 @@ module.exports = {
   validator: {
     enable: true,
     package: 'egg-joi-validate'
+  },
+  passport: {
+    enable: true,
+    package: 'egg-passport'
+  },
+  passportGithub: {
+    enable: true,
+    package: 'egg-passport-github'
   }
 }

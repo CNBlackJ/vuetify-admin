@@ -43,6 +43,13 @@ module.exports = appInfo => {
     },
   }
 
+  config.passportGithub = {
+    key: '',
+    secret: '',
+    callbackURL: 'http://127.0.0.1:7001/api/managers',
+    // proxy: false,
+  }
+
   return {
     ...config,
     ...userConfig,
