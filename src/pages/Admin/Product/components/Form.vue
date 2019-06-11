@@ -6,19 +6,34 @@
     <v-card-text>
       <v-container grid-list-md>
         <v-layout wrap>
-          <v-flex xs12 sm12 md12>
-            <v-text-field label="名称*" required></v-text-field>
+          <v-flex xs12 sm12 md3>
+            <v-img
+              :src="`https://picsum.photos/200/200?image=${5 + 10}`"
+              contain
+              class="grey darken-4 elevation-1"
+            ></v-img>
           </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-select
-              :items="['0-17', '18-29', '30-54', '54+']"
-              label="类别*"
-              required
-            ></v-select>
+          
+          <v-flex xs12 sm12 md9>
+            <v-layout wrap>
+              <v-flex xs12 sm12 md12>
+                <v-text-field label="名称*" required></v-text-field>
+              </v-flex>
+              <v-flex xs12 sm6 md6>
+                <v-select
+                  :items="['0-17', '18-29', '30-54', '54+']"
+                  label="类别*"
+                  required
+                ></v-select>
+              </v-flex>
+              <v-flex xs12 sm6 md6>
+                <Counter :label="'数量*'"/>
+              </v-flex>
+            </v-layout>
           </v-flex>
-          <v-flex xs12 sm6 md6>
-            <Counter :label="'数量*'"/>
-          </v-flex>
+        </v-layout>
+
+        <v-layout>
           <v-flex xs12 sm12 md12>
             <v-layout wrap>
               <v-flex xs4 sm4 md4>
@@ -42,8 +57,24 @@
               </v-flex>
             </v-layout>
           </v-flex>
+        </v-layout>
+
+        <v-layout>
           <v-flex xs12 sm12 md12>
             <PriceLabel />
+          </v-flex>
+        </v-layout>
+
+        <v-layout>
+          <v-flex md6>
+            <ImageWrapper
+              :title="'产品图'"
+              :images="['https://picsum.photos/200/200?image=12', 'https://picsum.photos/200/200?image=10']"/>
+          </v-flex>
+          <v-flex md6>
+            <ImageWrapper
+              :title="'详情图'"
+              :images="['https://picsum.photos/200/200?image=12', 'https://picsum.photos/200/200?image=123']"/>
           </v-flex>
         </v-layout>
       </v-container>
@@ -60,11 +91,13 @@
 <script>
 import Counter from '@/components/Counter'
 import PriceLabel from './PriceLabel'
+import Image from './Image'
 
 export default {
   components: {
     Counter,
-    PriceLabel
+    PriceLabel,
+    ImageWrapper: Image
   },
   data () {
     return {

@@ -16,12 +16,12 @@
     <v-divider light></v-divider>
     <v-card-actions>
       <v-text-field
-        :label="label"
+        :label="label + '*'"
         v-model="priceInfoForm.model"
       ></v-text-field>
       <v-spacer></v-spacer>
       <Counter
-        :label="'价格'"
+        :label="'价格*'"
         :required="true"
         v-on:updateCounter="onUpdateCounter"/>
       <v-spacer></v-spacer>
@@ -51,9 +51,7 @@ export default {
         model: '',
         price: 0
       },
-      priceInfoList: [
-        { id: 0, model: '1pc mini sample', price: 19.00 }
-      ]
+      priceInfoList: []
     }
   },
   methods: {
