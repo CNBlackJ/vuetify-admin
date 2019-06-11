@@ -17,11 +17,37 @@
             ></v-select>
           </v-flex>
           <v-flex xs12 sm6 md6>
-            <Counter :label="'价格*'"/>
+            <Counter :label="'数量*'"/>
+          </v-flex>
+          <v-flex xs12 sm12 md12>
+            <v-layout wrap>
+              <v-flex xs4 sm4 md4>
+                <v-select
+                  :items="['Package', 'Style', 'Length']"
+                  item-value="Length"
+                  label="计量单位*"
+                  required
+                ></v-select>
+              </v-flex>
+              <v-flex xs4 sm4 md4>
+                <v-select
+                  :items="['1', '2', '3']"
+                  item-value="3"
+                  label="排序*"
+                  required
+                ></v-select>
+              </v-flex>
+              <v-flex xs4 sm4 md4>
+                 <v-switch v-model="isFreeShipping" :label="`邮费: ${isFreeShipping ? '免邮费' : '按重计费'}`"></v-switch>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+          <v-flex xs12 sm12 md12>
+            <PriceLabel />
           </v-flex>
         </v-layout>
       </v-container>
-      <small>*indicates required field</small>
+      <small>带 * 为必填项</small>
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
@@ -33,10 +59,17 @@
 
 <script>
 import Counter from '@/components/Counter'
+import PriceLabel from './PriceLabel'
 
 export default {
   components: {
-    Counter
+    Counter,
+    PriceLabel
+  },
+  data () {
+    return {
+      isFreeShipping: false
+    }
   },
   methods: {
     onClose () {

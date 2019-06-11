@@ -10,6 +10,10 @@ class Api {
     const result = (await request.get(`/api/${this.resource}?${querystring.stringify(payload)}`)).data
     return result.code === 200 ? result.data : {}
   }
+  async get (id) {
+    const result = (await request.get(`/api/${this.resource}/${id}`)).data
+    return result.code === 200 ? result.data : {}
+  }
   async create () {
     return {}
   }

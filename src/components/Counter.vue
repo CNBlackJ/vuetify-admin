@@ -25,10 +25,18 @@ export default {
       default: true
     }
   },
+  watch: {
+    counter (val) {
+      this.onEmitCounter(val)
+    }
+  },
   data () {
     return {
       counter: 1
     }
+  },
+  created () {
+    this.onEmitCounter(this.counter)
   },
   methods: {
     onInsCounter () {
@@ -36,12 +44,15 @@ export default {
     },
     onDesCounter () {
       this.counter--
+    },
+    onEmitCounter (counter) {
+      this.$emit('updateCounter', counter)
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
   #counter input {
     text-align: center;
   }

@@ -5,7 +5,7 @@
     </v-layout>
 
     <v-layout row justify-center>
-      <v-dialog v-model="showDialog" persistent max-width="600px">
+      <v-dialog v-model="showDialog" persistent max-width="700px">
         <ProductForm v-on:closeDialog="onCloseDialog"/>
       </v-dialog>
     </v-layout>
