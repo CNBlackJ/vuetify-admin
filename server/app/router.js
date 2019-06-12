@@ -12,7 +12,7 @@ module.exports = app => {
   router.get('/', app.jwt, controller.home.index)
 
   // Auth
-  router.post('/api/auth', controller.auth.login)
+  router.post('/api/login', controller.auth.login)
 
   // Manager
   router.resources('managers', '/api/managers', app.jwt, admin, controller.manager)
