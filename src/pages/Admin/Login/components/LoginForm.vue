@@ -76,6 +76,7 @@ export default {
               that.$store.commit('auth/SET_USER_INFO', userInfo)
               const authToken = userInfo.authToken
               setToken(authToken)
+              that.$router.push('/admin/dashboard')
             } else {
               throw new Error(resp.error_msg)
             }

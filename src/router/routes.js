@@ -10,7 +10,7 @@ export const routes = [
     children: [
       {
         path: '/',
-        name: 'amdin',
+        name: 'admin',
         component: () => import('@/pages/Admin/Index')
       },
       {
